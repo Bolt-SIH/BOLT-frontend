@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "512554504600",
+    "project_id": "sih-bolt",
+    "storage_bucket": "sih-bolt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512554504600:android:ca4d05310792dd4b3a5bed",
+        "android_client_info": {
+          "package_name": "com.example.bolt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512554504600-55177qrfb9vm16gmu1t6pkmssr53kgpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1hGjar7atTPavUO2IEbJ72w14w4JtN80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512554504600-55177qrfb9vm16gmu1t6pkmssr53kgpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
