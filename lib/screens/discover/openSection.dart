@@ -1,6 +1,6 @@
 // ignore: file_names
 // ignore: file_names
-import 'package:flutter/material.dart';
+import "../../file_exported.dart";
 import 'package:bolt/screens/discover/discoverWordGame.dart';
 
 // ignore: camel_case_types, must_be_immutable

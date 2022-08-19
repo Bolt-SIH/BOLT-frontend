@@ -1,7 +1,7 @@
 // ignore: file_names
 // ignore: file_names
 
-import 'package:flutter/material.dart';
+import "../../file_exported.dart";
 
 // ignore: camel_case_types
 class disWordGame extends StatefulWidget {

@@ -1,7 +1,7 @@
 // ignore: file_names
 // ignore_for_file: sort_child_properties_last
 
-import 'package:flutter/material.dart';
+import "../../file_exported.dart";
 import "package:bolt/screens/discover/openSection.dart";
 import "package:bolt/screens/discover/models.dart";
 import "package:bolt/screens/discover/switchPage.dart";
