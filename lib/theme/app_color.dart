@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "../file_exported.dart";
 
 class CustomColors {
   static const backgroundColor = Color(0xff000000);
