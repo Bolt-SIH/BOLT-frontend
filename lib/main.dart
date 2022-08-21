@@ -1,5 +1,8 @@
+import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
+import 'package:bolt/screens/Onboarding/start_screen.dart';
+
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: CustomColors.backgroundColor,
         ),
-        home: const Authentication(),
+        home: const Start_Screen(),
       ),
     );
   }
