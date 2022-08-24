@@ -1,4 +1,4 @@
-// ignore_for_file: no_logic_in_create_state
+// ignore_for_file: no_logic_in_create_state, unused_import, prefer_const_constructors, must_be_immutable
 
 import 'package:bolt/screens/Discover/detail_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -24,7 +24,6 @@ class _Discover_MainState extends State<Discover_Main> {
 
   @override
   void initState() {
-    // TODO: implement initState
     response = fetchnews();
     articles = fetch_artice();
     summary = fetch_summary();
@@ -62,8 +61,6 @@ class _Discover_MainState extends State<Discover_Main> {
                           itemBuilder: ((context, index) {
                             return GestureDetector(
                               onTap: () {
-                                print(snapshot.data);
-
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -93,7 +90,22 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const CircularProgressIndicator();
+                    return Shimmer.fromColors(
+                        baseColor: Colors.grey,
+                        highlightColor: Colors.white10,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: snapshot.data?.length,
+                            itemBuilder: ((context, index) {
+                              return Container(
+                                margin: const EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color:
+                                        const Color.fromARGB(255, 30, 29, 29)),
+                                width: 100,
+                              );
+                            })));
                   })),
           Container(
             alignment: Alignment.centerLeft,
@@ -147,7 +159,22 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const CircularProgressIndicator();
+                    return Shimmer.fromColors(
+                        baseColor: Colors.grey,
+                        highlightColor: Colors.white10,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: snapshot.data?.length,
+                            itemBuilder: ((context, index) {
+                              return Container(
+                                margin: const EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color:
+                                        const Color.fromARGB(255, 30, 29, 29)),
+                                width: 100,
+                              );
+                            })));
                   }))),
           Container(
             alignment: Alignment.centerLeft,
@@ -202,7 +229,22 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const CircularProgressIndicator();
+                    return Shimmer.fromColors(
+                        baseColor: Colors.grey,
+                        highlightColor: Colors.white10,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: snapshot.data?.length,
+                            itemBuilder: ((context, index) {
+                              return Container(
+                                margin: const EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color:
+                                        const Color.fromARGB(255, 30, 29, 29)),
+                                width: 100,
+                              );
+                            })));
                   }))),
         ],
       ),
@@ -286,7 +328,7 @@ class Streakdash extends StatelessWidget {
   }
 }
 
-// This is the crous
+// This is the carousel widget
 class Carouselwidget extends StatefulWidget {
   const Carouselwidget({Key? key}) : super(key: key);
 
@@ -346,7 +388,21 @@ class _CrouselwidgetState extends State<Carouselwidget> {
                       scrollDirection: Axis.horizontal,
                     ));
               }
-              return const CircularProgressIndicator();
+              return Shimmer.fromColors(
+                  baseColor: Colors.grey,
+                  highlightColor: Colors.white10,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: snapshot.data?.length,
+                      itemBuilder: ((context, index) {
+                        return Container(
+                          margin: const EdgeInsets.only(right: 10),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 30, 29, 29)),
+                          width: MediaQuery.of(context).size.width * 0.9,
+                        );
+                      })));
             })));
   }
 }

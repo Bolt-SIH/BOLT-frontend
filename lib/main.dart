@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, depend_on_referenced_packages
+
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
@@ -18,6 +20,8 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser;
+
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

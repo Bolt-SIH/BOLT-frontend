@@ -77,7 +77,7 @@ class _Start_ScreenState extends State<Start_Screen> {
               child: RichText(
                 text: TextSpan(
                   text: start_content[onboard_index]['desc'].toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.yellow,
                       fontFamily: 'Montserrat',
                       fontSize: 16),

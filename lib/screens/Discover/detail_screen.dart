@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, must_be_immutable
 
 import 'package:bolt/screens/Discover/word_count_game.dart';
 import 'package:flutter/material.dart';
@@ -63,23 +63,30 @@ class _Detail_screenState extends State<Detail_screen> {
                     borderRadius: BorderRadius.circular(25)),
               )),
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(13),
             child: Center(
               child: Text(
                 "${response[index]['title']}",
                 style: const TextStyle(
-                    color: Colors.yellowAccent,
-                    fontSize: 15,
+                    color: Color.fromARGB(255, 246, 231, 93),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                     fontFamily: 'Montserrat'),
               ),
             ),
           ),
+          const Divider(
+            indent: 5,
+            endIndent: 5,
+            thickness: 0.2,
+            color: Colors.white,
+          ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(13),
             child: Center(
               child: Text(
-                "Description :\n\n"
-                "${response[index]['description']}\n\n Our personal finances play a huge role in our lives. And yet people rarely discuss them and educate themselves on this topic. For this reason, many presumptions and false ideas about money have emerged over the years.\n\nThey think having money is a result of luck or that rich people are all inheritors. Or perhaps wealth belongs only to those who disrupt the world and benefit from their discoveries.        Wrong! Money is a universal, circular asset in the world. And you too can become financially independent, if you choose to adopt a few wealth-growing practices and change your current mindset. At first, you’ll have to acknowledge your financial situation. Biased financial decisions are what stand in the way between your current life and the life you desire.Then, it’ll be easier to spot and get rid of them. Your ways of seeking status, your envy, and other emotions that have control over you all play a significant role when it comes to your financial decisions. Of course, there are other things to explore when it comes to making better choices with your money. The Psychology of Money outlines what it is that you can do starting today to improve your financial status. Here are my three favorite lessons from the book:Being greedy can turn out to be the biggest financial mistake you’ll ever make. Envy has no place in the money market, as it can blur your thinking. Our early experiences with money determine our financial decisions later on. Now, let’s discuss these lessons in detail, and see how we can benefit from them!",
+                "\n"
+                "${response[index]['description']}\n\n Our personal finances play a huge role in our lives. And yet people rarely discuss them and educate themselves on this topic. For this reason, many presumptions and false ideas about money have emerged over the years.\n\nThey think having money is a result of luck or that rich people are all inheritors. Or perhaps wealth belongs only to those who disrupt the world and benefit from their discoveries.\n\n Wrong! Money is a universal, circular asset in the world. And you too can become financially independent, if you choose to adopt a few wealth-growing practices and change your current mindset. At first, you’ll have to acknowledge your financial situation. Biased financial decisions are what stand in the way between your current life and the life you desire.Then, it’ll be easier to spot and get rid of them. Your ways of seeking status, your envy, and other emotions that have control over you all play a significant role when it comes to your financial decisions. Of course, there are other things to explore when it comes to making better choices with your money. The Psychology of Money outlines what it is that you can do starting today to improve your financial status. Here are my three favorite lessons from the book:Being greedy can turn out to be the biggest financial mistake you’ll ever make. Envy has no place in the money market, as it can blur your thinking. Our early experiences with money determine our financial decisions later on. Now, let’s discuss these lessons in detail, and see how we can benefit from them!",
                 style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -109,7 +116,6 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
 
   @override
   void initState() {
-    // TODO: implement initState
     response = widget.response;
     index = widget.index;
 
@@ -144,8 +150,6 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    // ignore: sort_child_properties_last
-
                     margin: const EdgeInsets.only(right: 9),
                     width: MediaQuery.of(context).size.width * 0.35,
                     decoration: BoxDecoration(
@@ -156,7 +160,7 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
                         color: const Color.fromARGB(255, 28, 27, 27),
                         borderRadius: BorderRadius.circular(25)),
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -164,17 +168,23 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
                         "${response[index]['title']}",
                         style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 22,
                             fontFamily: 'baloo'),
                       ),
                     ),
                   ),
                 ],
               )),
+          const Divider(
+            indent: 5,
+            endIndent: 5,
+            thickness: 0.2,
+            color: Colors.white,
+          ),
           Padding(
             padding: const EdgeInsets.all(13.0),
             child: Text(
-              "\nDescription :\n\n"
+              "\n"
               "${response[index]['description']}\n\n Our personal finances play a huge role in our lives. And yet people rarely discuss them and educate themselves on this topic. For this reason, many presumptions and false ideas about money have emerged over the years. They think having money is a result of luck or that rich people are all inheritors. Or perhaps wealth belongs only to those who disrupt the world and benefit from their discoveries.        Wrong! Money is a universal, circular asset in the world. And you too can become financially independent, if you choose to adopt a few wealth-growing practices and change your current mindset. At first, you’ll have to acknowledge your financial situation. Biased financial decisions are what stand in the way between your current life and the life you desire.Then, it’ll be easier to spot and get rid of them. Your ways of seeking status, your envy, and other emotions that have control over you all play a significant role when it comes to your financial decisions. Of course, there are other things to explore when it comes to making better choices with your money. The Psychology of Money outlines what it is that you can do starting today to improve your financial status. Here are my three favorite lessons from the book:Being greedy can turn out to be the biggest financial mistake you’ll ever make. Envy has no place in the money market, as it can blur your thinking. Our early experiences with money determine our financial decisions later on. Now, let’s discuss these lessons in detail, and see how we can benefit from them!",
               style: const TextStyle(
                 color: Colors.white,
