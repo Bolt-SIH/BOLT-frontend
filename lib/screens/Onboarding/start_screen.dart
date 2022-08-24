@@ -1,7 +1,6 @@
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 // ignore: camel_case_types
 class Start_Screen extends StatefulWidget {
@@ -44,66 +43,68 @@ class _Start_ScreenState extends State<Start_Screen> {
             style: TextStyle(fontFamily: 'Montserrat'),
           ),
         ),
-        body: ListView(children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 160, 0, 30),
-            child: Container(
-              height: 180,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.contain,
-                    image: AssetImage(
-                        start_content[onboard_index]['image'].toString())),
+        body: Container(
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 160, 0, 30),
+              child: Container(
+                height: 180,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.contain,
+                      image: AssetImage(
+                          start_content[onboard_index]['image'].toString())),
+                ),
               ),
             ),
-          ),
-          Container(
-              margin: const EdgeInsets.all(20),
-              alignment: Alignment.centerLeft,
-              height: 40,
-              child: RichText(
-                text: TextSpan(
-                  text: start_content[onboard_index]['title'].toString(),
-                  style: TextStyle(
-                      color: Colors.yellow,
-                      fontFamily: 'Montserrat',
-                      fontSize: 20),
-                ),
-              )),
-          Container(
-              margin: const EdgeInsets.all(20),
-              alignment: Alignment.topLeft,
-              height: 100,
-              child: RichText(
-                text: TextSpan(
-                  text: start_content[onboard_index]['desc'].toString(),
-                  style: const TextStyle(
-                      color: Colors.yellow,
-                      fontFamily: 'Montserrat',
-                      fontSize: 16),
-                ),
-              )),
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: FlatButton(
-                height: 50,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)),
-                onPressed: () {
-                  setState(() {
-                    if (onboard_index < start_content.length - 1) {
-                      onboard_index += 1;
-                    } else if (onboard_index == start_content.length - 1) {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Landing_Page()));
-                    }
-                  });
-                },
-                color: const Color(0xffE7C1EA),
-                child: const Text("Continue")),
-          ),
-        ]));
+            Container(
+                margin: const EdgeInsets.all(20),
+                alignment: Alignment.centerLeft,
+                height: 40,
+                child: RichText(
+                  text: TextSpan(
+                    text: start_content[onboard_index]['title'].toString(),
+                    style: const TextStyle(
+                        color: Colors.yellow,
+                        fontFamily: 'Montserrat',
+                        fontSize: 20),
+                  ),
+                )),
+            Container(
+                margin: const EdgeInsets.all(20),
+                alignment: Alignment.topLeft,
+                height: 100,
+                child: RichText(
+                  text: TextSpan(
+                    text: start_content[onboard_index]['desc'].toString(),
+                    style: const TextStyle(
+                        color: Colors.yellow,
+                        fontFamily: 'Montserrat',
+                        fontSize: 16),
+                  ),
+                )),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: FlatButton(
+                  height: 50,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40)),
+                  onPressed: () {
+                    setState(() {
+                      if (onboard_index < start_content.length - 1) {
+                        onboard_index += 1;
+                      } else if (onboard_index == start_content.length - 1) {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Landing_Page()));
+                      }
+                    });
+                  },
+                  color: const Color(0xffE7C1EA),
+                  child: const Text("Continue")),
+            ),
+          ]),
+        ));
   }
 }
