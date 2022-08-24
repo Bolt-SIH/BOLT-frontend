@@ -4,6 +4,7 @@ import 'package:bolt/enums/api_type.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import '../../services/api_request.dart';
 import 'package:http/http.dart' as http;
@@ -16,7 +17,8 @@ class Authentication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool onboarded = true;
+    final box = GetStorage();
+    log("Box read ${box.read("token")}");
 
     return StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
@@ -27,7 +29,7 @@ class Authentication extends StatelessWidget {
               child: Text("Hello this is loading"),
             );
             // And check if the user preference has a header tag withing it
-          } else if (snapshot.hasData & onboarded) {
+          } else if (snapshot.hasData && box.read("token") == null) {
             try {
               final user = FirebaseAuth.instance.currentUser!;
               Map<String, String> query = {
@@ -43,8 +45,8 @@ class Authentication extends StatelessWidget {
 
                 log(response.statusCode.toString());
                 if (response.statusCode >= 200) {
-                  onboarded = false;
                   log(json.decode(response.body)["token"].toString());
+                  box.write('token', json.decode(response.body)["token"]);
 
                   // Return here to on onboarding screens
                 }
@@ -58,11 +60,13 @@ class Authentication extends StatelessWidget {
                       "/user/user-check", ApiType.post,
                       body: query);
 
-                  log(json.decode(response.body).toString());
+                  log(json.decode(response.body)["token"]);
+                  box.write('token', json.decode(response.body)["token"]);
                 }
               }
 
               akash();
+              // Return to the Course Onboarding screen or Course screen.
               return Center(
                 child: TextButton(
                     onPressed: () {
@@ -71,22 +75,17 @@ class Authentication extends StatelessWidget {
                           listen: false);
                       provider.logOut();
                     },
-                    child: Text("Sign Out")),
+                    child: const Text("Sign Out")),
               );
 
               // Return the screen.
             } on SocketException catch (e) {
               log(e.toString());
             }
-          } else if (snapshot.hasData) {
+          } else if (snapshot.hasData && box.read("token") != null) {
+            // Transfer to the Course Screen.
             return Center(
-              child: TextButton(
-                  onPressed: () {
-                    final provider = Provider.of<GoogleSignInProvider>(context,
-                        listen: false);
-                    provider.logOut();
-                  },
-                  child: Text("Sign Out")),
+              child: Text("a ${box.read("token")}"),
             );
           } else if (snapshot.hasError) {
             const SnackBar(
@@ -95,7 +94,9 @@ class Authentication extends StatelessWidget {
               ),
             );
           }
-
+          final provider =
+              Provider.of<GoogleSignInProvider>(context, listen: false);
+          provider.logOut();
           return const GettingStarted();
         });
   }

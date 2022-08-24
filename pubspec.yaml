@@ -32,16 +32,15 @@ dependencies:
     
   flutter_svg: ^1.1.1+1
   # For authentication
-  firebase_auth: ^3.5.1
-  google_sign_in: ^5.4.0
+  firebase_auth: ^3.6.4
+  google_sign_in: ^5.4.1
 
   # For state management
   provider: ^6.0.3
   # For APIs
   http: ^0.13.5
-  # For small database 
-  shared_preferences: ^2.0.15
 
+  get_storage: ^2.0.3
 
 
   # The following adds the Cupertino Icons font to your application.
