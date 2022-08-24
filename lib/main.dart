@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: CustomColors.backgroundColor,
         ),
-        home: const Start_Screen(),
+        home: const Authentication(),
       ),
     );
   }
