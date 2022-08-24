@@ -114,8 +114,7 @@ class _Words_readState extends State<Words_read> {
       body: ListView(children: [
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: const Color.fromARGB(255, 64, 65, 65)),
+              borderRadius: BorderRadius.circular(30), color: Colors.black),
           margin: const EdgeInsets.all(10),
           height: 300,
           width: double.infinity,
@@ -222,12 +221,6 @@ class _Words_readState extends State<Words_read> {
             ],
           ),
         ),
-        Container(
-          height: 100,
-          margin: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              color: Colors.grey[850], borderRadius: BorderRadius.circular(20)),
-        )
       ]),
     );
   }

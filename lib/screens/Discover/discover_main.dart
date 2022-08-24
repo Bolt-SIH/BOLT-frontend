@@ -3,6 +3,7 @@
 import 'package:bolt/screens/Discover/detail_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../models/discover_api.dart';
 
@@ -92,7 +93,7 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const Center(child: CircularProgressIndicator());
+                    return const CircularProgressIndicator();
                   })),
           Container(
             alignment: Alignment.centerLeft,
@@ -146,7 +147,7 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const Center(child: CircularProgressIndicator());
+                    return const CircularProgressIndicator();
                   }))),
           Container(
             alignment: Alignment.centerLeft,
@@ -159,7 +160,7 @@ class _Discover_MainState extends State<Discover_Main> {
           ),
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              height: 100,
+              height: 120,
               width: double.infinity,
               child: FutureBuilder<List>(
                   future: summary,
@@ -174,7 +175,8 @@ class _Discover_MainState extends State<Discover_Main> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Detail_screen(
+                                        builder: (context) =>
+                                            Book_summary_detail(
                                               response: snapshot.data
                                                   as List<dynamic>,
                                               index: index,
@@ -192,7 +194,7 @@ class _Discover_MainState extends State<Discover_Main> {
                                                 ['urlToImage'])
                                             : const NetworkImage(
                                                 "https://via.placeholder.com/150")),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(10),
                                     color:
                                         const Color.fromARGB(255, 30, 29, 29)),
                                 width: 100,
@@ -200,7 +202,7 @@ class _Discover_MainState extends State<Discover_Main> {
                             );
                           }));
                     }
-                    return const Center(child: CircularProgressIndicator());
+                    return const CircularProgressIndicator();
                   }))),
         ],
       ),
@@ -344,7 +346,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
                       scrollDirection: Axis.horizontal,
                     ));
               }
-              return const Center(child: CircularProgressIndicator());
+              return const CircularProgressIndicator();
             })));
   }
 }
