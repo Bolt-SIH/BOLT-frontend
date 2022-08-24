@@ -7,11 +7,13 @@ import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'file_exported.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -30,15 +32,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           appBarTheme: const AppBarTheme(color: Colors.black),
           scaffoldBackgroundColor: CustomColors.backgroundColor,
-          bottomSheetTheme: const BottomSheetThemeData(modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
+
+          textTheme: const TextTheme(
+            bodyText1: TextStyle(color: Colors.white),
+            bodyText2: TextStyle(color: Colors.white),
+          ),
         ),
-        home: const FirstScreen(),
-        // const Authentication(),
-        routes: {
-          GameOne.routeName:(ctx) =>const GameOne(),
-          SchulteLevelUp.routeName:(ctx) => SchulteLevelUp(), 
-        }
-        ,
+        home: Authentication(),
       ),
     );
   }
