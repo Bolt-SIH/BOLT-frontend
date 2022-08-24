@@ -37,6 +37,10 @@ dependencies:
 
   # For state management
   provider: ^6.0.3
+  # For APIs
+  http: ^0.13.5
+  # For small database 
+  shared_preferences: ^2.0.15
 
 
 

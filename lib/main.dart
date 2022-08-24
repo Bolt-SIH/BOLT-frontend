@@ -4,12 +4,14 @@ import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'file_exported.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
@@ -24,8 +26,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: CustomColors.backgroundColor,
+          textTheme: const TextTheme(
+            bodyText1: TextStyle(color: Colors.white),
+            bodyText2: TextStyle(color: Colors.white),
+          ),
         ),
-        home: const Authentication(),
+        home: Authentication(),
       ),
     );
   }
