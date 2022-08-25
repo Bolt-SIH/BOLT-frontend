@@ -33,11 +33,14 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          appBarTheme: const AppBarTheme(color: Colors.black),
-          scaffoldBackgroundColor: CustomColors.backgroundColor,
-          bottomSheetTheme: const BottomSheetThemeData(modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
-        ),
-        home: const FirstScreen(),
+            appBarTheme: const AppBarTheme(color: Colors.black),
+            scaffoldBackgroundColor: CustomColors.backgroundColor,
+            bottomSheetTheme: const BottomSheetThemeData(
+                modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
+            textTheme: const TextTheme(
+                bodyMedium: TextStyle(color: Colors.white))),
+        home: const GameCollections(),
+
         // const Authentication(),
         routes: {
           GameOne.routeName:(ctx) =>const GameOne(),
