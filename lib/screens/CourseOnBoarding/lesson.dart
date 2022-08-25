@@ -9,6 +9,7 @@ import 'package:rive/rive.dart';
 import '../Learning_Games/learn_start.dart';
 
 class LessonCompleted extends StatefulWidget {
+  static const routeName = "/lessonComplete";
   const LessonCompleted({Key? key}) : super(key: key);
 
   @override
