@@ -4,6 +4,8 @@ import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
+import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
+import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
 
 import 'package:bolt/screens/games/game_collection.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/first_screen.dart';
@@ -48,16 +50,19 @@ class MyApp extends StatelessWidget {
                 modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
             textTheme:
                 const TextTheme(bodyMedium: TextStyle(color: Colors.white))),
-        // home: const GameCollections(),
+        // home: Authentication(),
+        home: const PointAndRead(),
 
-        home: Authentication(),
         routes: {
           LessonCompleted.routeName: (ctx) => const LessonCompleted(),
           FirstScreen.routeName: (ctx) => const FirstScreen(),
+          PointAndRead.routeName: (ctx) => const PointAndRead(),
           SecondScreen.routeName: (ctx) => const SecondScreen(),
           ThirdScreen.routeName: (ctx) => const ThirdScreen(),
           SchulteLevelOne.routeName: (ctx) => const SchulteLevelOne(),
           SchulteLevelUp.routeName: (ctx) => const SchulteLevelUp(),
+          // Point and read
+          PointAndReadIntro.routeName: (ctx) => const PointAndReadIntro(),
         },
       ),
     );

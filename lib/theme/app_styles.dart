@@ -17,7 +17,25 @@ Widget button(text, screen, context) {
           )),
       child: Text(
         '$text',
-        style: TextStyle(fontSize: 20),
+        style: const TextStyle(fontSize: 20),
+      ),
+    ),
+  );
+}
+
+Widget CustomProgressBar(progress) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(
+      vertical: 10.0,
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: LinearProgressIndicator(
+        backgroundColor: CustomColors.progressBarBackground,
+        minHeight: 14,
+        value: progress,
+        valueColor:
+            const AlwaysStoppedAnimation<Color>(CustomColors.brightyellow),
       ),
     ),
   );

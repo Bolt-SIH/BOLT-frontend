@@ -1,5 +1,7 @@
 import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/Games/schulte_table/game_intro_screens/first_screen.dart';
+import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
+import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
 
 class GameCollections extends StatefulWidget {
   const GameCollections({Key? key}) : super(key: key);
@@ -84,7 +86,28 @@ class _GameCollectionsState extends State<GameCollections> {
                     icon: const Icon(Icons.games)),
               ),
             ),
-            const Text("Schulte Table")
+            const Text("Schulte Table"),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Column(children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    backgroundColor: Color.fromARGB(255, 8, 135, 225),
+                    minRadius: 36,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, PointAndReadIntro.routeName);
+                        },
+                        icon: const Icon(Icons.read_more)),
+                  ),
+                ),
+                const Text("Point & Read")
+              ])
+            ]),
           ]),
         ],
       ),
