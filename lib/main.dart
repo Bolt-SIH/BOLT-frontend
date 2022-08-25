@@ -1,7 +1,8 @@
 // ignore_for_file: unused_import, depend_on_referenced_packages
 
 import 'package:bolt/screens/Discover/discover_main.dart';
-import 'package:bolt/screens/Learning_Games/memory_game.dart';
+import 'package:bolt/screens/Learning_Games/learn_start.dart';
+
 import 'package:bolt/screens/Learning_Games/peripheral_game.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: Colors.white),
           ),
         ),
-        home: Authentication(),
+        home: Peripheral_game(),
       ),
     );
   }
