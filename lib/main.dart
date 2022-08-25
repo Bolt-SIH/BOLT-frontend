@@ -50,9 +50,7 @@ class MyApp extends StatelessWidget {
                 modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
             textTheme:
                 const TextTheme(bodyMedium: TextStyle(color: Colors.white))),
-        // home: Authentication(),
-        home: const PointAndRead(),
-
+        home: Authentication(),
         routes: {
           LessonCompleted.routeName: (ctx) => const LessonCompleted(),
           FirstScreen.routeName: (ctx) => const FirstScreen(),
