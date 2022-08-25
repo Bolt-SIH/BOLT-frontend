@@ -75,7 +75,7 @@ class _GameCollectionsState extends State<GameCollections> {
             height: 40,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 25),
+            margin: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
