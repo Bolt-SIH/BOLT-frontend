@@ -168,18 +168,32 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
                         color: const Color.fromARGB(255, 28, 27, 27),
                         borderRadius: BorderRadius.circular(25)),
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "${response[index]['title']}",
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontFamily: 'baloo'),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "${response[index]['title']}",
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontFamily: 'Montserrat'),
+                          ),
+                        ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          "${response[index]['author']}",
+                          style: const TextStyle(
+                              color: Colors.grey,
+                              fontFamily: 'Montserrat',
+                              fontSize: 15),
+                        ),
+                      )
+                    ],
                   ),
                 ],
               )),
