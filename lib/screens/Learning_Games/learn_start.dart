@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:bolt/screens/CourseOnBoarding/intro.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +68,11 @@ class Learn_start extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              log("Pressed");
+              // TODO: Add if the course is visited for the first time.
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CourseIntro1()));
             },
             child: Container(
               height: 100,
