@@ -25,7 +25,7 @@ class _Discover_MainState extends State<Discover_Main> {
   @override
   void initState() {
     response = fetchnews();
-    articles = fetch_artice();
+    articles = fetcharticle();
     summary = fetch_summary();
     super.initState();
   }

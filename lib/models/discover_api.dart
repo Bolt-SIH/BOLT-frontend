@@ -2,7 +2,21 @@
 
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
+
+import '../enums/api_type.dart';
+import '../services/api_request.dart';
+
+final _apiRequest = ApiRequest(baseUrl: "3.110.119.227");
+
+Future<List<dynamic>> fetcharticle() async {
+  http.Response response =
+      await _apiRequest.getResponse("/content/fetch-articles", ApiType.get);
+
+  log(json.decode(response.body).toString());
+  return jsonDecode(response.body)['articles'];
+}
 
 Future<List<dynamic>> fetchcarousel() async {
   final carousel =
@@ -11,8 +25,8 @@ Future<List<dynamic>> fetchcarousel() async {
 }
 
 Future<List<dynamic>> fetchnews() async {
-  final news = await http.get(Uri.parse(
-      "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=f5e1a8d911554465bf7b929b132a94f2"));
+  http.Response news =
+      await _apiRequest.getResponse("/content/fetch-articles", ApiType.get);
   return jsonDecode(news.body)['articles'];
 }
 

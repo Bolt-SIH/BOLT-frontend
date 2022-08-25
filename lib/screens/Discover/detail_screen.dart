@@ -64,6 +64,10 @@ class _Detail_screenState extends State<Detail_screen> {
                     borderRadius: BorderRadius.circular(25)),
               )),
           Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text("${response[index]['source']}"),
+          ),
+          Padding(
             padding: const EdgeInsets.all(13),
             child: Center(
               child: Text(
@@ -137,7 +141,10 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
                         builder: ((context) =>
                             Words_read(response: response, index: index))));
               }),
-              child: const Icon(Icons.navigate_next_sharp),
+              child: const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Icon(Icons.watch_later_outlined),
+              ),
             )
           ],
           backgroundColor: Colors.black,

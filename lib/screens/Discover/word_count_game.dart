@@ -141,14 +141,14 @@ class _Words_readState extends State<Words_read> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(10)),
-                  height: 40,
-                  width: 60,
-                  child: GestureDetector(
-                    onTap: (() => increase_timer()),
+              GestureDetector(
+                  onTap: (() => increase_timer()),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 40,
+                    width: 60,
                     child: const Center(
                       child: Text(
                         "-1X",
@@ -159,54 +159,55 @@ class _Words_readState extends State<Words_read> {
                       ),
                     ),
                   )),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  if (isactive == true) {
+                    _timer.cancel();
+                    log(_timer.isActive.toString());
+                  } else {
+                    log("else Condition");
+                    Start_timer();
+                  }
+
+                  setState(() {
+                    if (listdesc.length == i + 1) {
+                      i = 0;
+                      _timer.cancel();
+                      Start_timer();
+                    }
+                    if (isactive == false) {
+                      isactive = true;
+                    } else {
+                      isactive = false;
+                    }
+                  });
+                },
+                child: Container(
                   decoration: BoxDecoration(
                       color: Colors.yellow,
                       borderRadius: BorderRadius.circular(10)),
                   height: 40,
                   width: 60,
-                  child: GestureDetector(
-                    child: Center(
-                        child: isactive
-                            ? const Icon(
-                                Icons.pause,
-                                color: Colors.black,
-                              )
-                            : const Icon(
-                                Icons.play_arrow,
-                                color: Colors.black,
-                              )),
-                    onTap: () {
-                      if (isactive == true) {
-                        _timer.cancel();
-                        log(_timer.isActive.toString());
-                      } else {
-                        log("else Condition");
-                        Start_timer();
-                      }
-
-                      setState(() {
-                        if (listdesc.length == i + 1) {
-                          i = 0;
-                          _timer.cancel();
-                          Start_timer();
-                        }
-                        if (isactive == false) {
-                          isactive = true;
-                        } else {
-                          isactive = false;
-                        }
-                      });
-                    },
-                  )),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 40,
-                width: 60,
-                child: GestureDetector(
-                  onTap: () => decrease_timer(),
+                  child: Center(
+                      child: isactive
+                          ? const Icon(
+                              Icons.pause,
+                              color: Colors.black,
+                            )
+                          : const Icon(
+                              Icons.play_arrow,
+                              color: Colors.black,
+                            )),
+                ),
+              ),
+              GestureDetector(
+                onTap: () => decrease_timer(),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(10)),
+                  height: 40,
+                  width: 60,
                   child: const Center(
                     child: Text(
                       "1X",
@@ -217,7 +218,7 @@ class _Words_readState extends State<Words_read> {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
