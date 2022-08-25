@@ -51,7 +51,7 @@ class Authentication extends StatelessWidget {
 
                   // Return here to on onboarding screens
                 }
-
+                // Added git code
                 // Loging in as the user is already SignedUp
                 if (response.statusCode == 400) {
                   Map<String, String> query = {
