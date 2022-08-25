@@ -1,6 +1,7 @@
 import 'package:bolt/file_exported.dart';
 import 'dart:math';
-import 'package:bolt/screens/SpeedReading Games/colorGameLevel2.dart';
+
+import 'package:bolt/screens/games/ColorGame/colorGameLevel2.dart';
 
 const _targetColors = [Colors.orange, Colors.green, Colors.yellow, Colors.blue];
 const _textColors = [Colors.blue, Colors.yellow, Colors.green, Colors.orange];
@@ -36,6 +37,7 @@ class GameTimer {
 }
 
 class colorConfusionLevel1 extends StatefulWidget {
+  static const routeName = '/colorConfusionLevel1';
   const colorConfusionLevel1({Key? key}) : super(key: key);
 
   @override
