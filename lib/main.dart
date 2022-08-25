@@ -1,23 +1,32 @@
+// ignore_for_file: unused_import, depend_on_referenced_packages
+
+import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
+import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
-import 'package:bolt/screens/Onboarding/gettingstarted.dart';
-// import 'package:bolt/screens/SpeedReading%20Games/colorLevel1.dart';
+
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:bolt/screens/SpeedReading Games/colorGameLevel1.dart';
-// import 'package:bolt/screens/SpeedReading Games/colorLevel1.dart';
+
+import 'package:get_storage/get_storage.dart';
+
 
 import 'file_exported.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser;
+
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +35,27 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: CustomColors.backgroundColor,
-        ),
-        home: colorConfusionLevel1(),
+
+            appBarTheme: const AppBarTheme(color: Colors.black),
+            scaffoldBackgroundColor: CustomColors.backgroundColor,
+            bottomSheetTheme: const BottomSheetThemeData(
+                modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
+            textTheme:
+                const TextTheme(bodyMedium: TextStyle(color: Colors.white))),
+        // home: Authentication(),
+        home: const PointAndRead(),
+
+        routes: {
+          LessonCompleted.routeName: (ctx) => const LessonCompleted(),
+          FirstScreen.routeName: (ctx) => const FirstScreen(),
+          PointAndRead.routeName: (ctx) => const PointAndRead(),
+          SecondScreen.routeName: (ctx) => const SecondScreen(),
+          ThirdScreen.routeName: (ctx) => const ThirdScreen(),
+          SchulteLevelOne.routeName: (ctx) => const SchulteLevelOne(),
+          SchulteLevelUp.routeName: (ctx) => const SchulteLevelUp(),
+          // Point and read
+          PointAndReadIntro.routeName: (ctx) => const PointAndReadIntro(),
+        },
       ),
     );
   }
