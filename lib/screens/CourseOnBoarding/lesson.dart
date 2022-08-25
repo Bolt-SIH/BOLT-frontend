@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bolt/file_exported.dart';
+import 'package:bolt/screens/games/game_collection.dart';
 import 'package:bolt/theme/app_styles.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -64,7 +65,7 @@ class _LessonCompletedState extends State<LessonCompleted> {
           const Spacer(
             flex: 1,
           ),
-          button("Completed", const Learn_start(), context)
+          button("Completed", const GameCollections(), context)
         ]),
       ),
     );
