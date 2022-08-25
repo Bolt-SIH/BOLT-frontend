@@ -37,16 +37,18 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: CustomColors.backgroundColor,
             bottomSheetTheme: const BottomSheetThemeData(
                 modalBackgroundColor: Color.fromARGB(255, 30, 29, 29)),
-            textTheme: const TextTheme(
-                bodyMedium: TextStyle(color: Colors.white))),
+            textTheme:
+                const TextTheme(bodyMedium: TextStyle(color: Colors.white))),
         home: const GameCollections(),
 
         // const Authentication(),
         routes: {
-          GameOne.routeName:(ctx) =>const GameOne(),
-          SchulteLevelUp.routeName:(ctx) => SchulteLevelUp(), 
-        }
-        ,
+          FirstScreen.routeName: (ctx) => const FirstScreen(),
+          SecondScreen.routeName: (ctx) => const SecondScreen(),
+          ThirdScreen.routeName: (ctx) => const ThirdScreen(),
+          SchulteLevelOne.routeName: (ctx) => const SchulteLevelOne(),
+          SchulteLevelUp.routeName: (ctx) => const SchulteLevelUp(),
+        },
       ),
     );
   }
