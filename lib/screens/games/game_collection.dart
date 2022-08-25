@@ -1,8 +1,10 @@
 import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/Games/schulte_table/game_intro_screens/first_screen.dart';
 import 'package:bolt/screens/games/ColorGame/colorGameLevel1.dart';
+import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
+import 'package:bolt/theme/app_styles.dart';
 
 class GameCollections extends StatefulWidget {
   const GameCollections({Key? key}) : super(key: key);
@@ -57,19 +59,41 @@ class _GameCollectionsState extends State<GameCollections> {
             width: double.infinity,
           ),
           Container(
-            height: 150,
-            width: 200,
+            width: MediaQuery.of(context).size.width * 0.8,
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
               border: Border.all(color: CustomColors.successbuttonbackground),
               borderRadius: BorderRadius.circular(
                 10,
               ),
             ),
-            child: const Center(
-                child: Text(
-              "Unit 1",
-              style: TextStyle(color: Colors.white),
-            )),
+            child: Column(children: [
+              Image.asset("assets/images/castle.png"),
+              RichText(
+                text: const TextSpan(
+                    text: "Next Milestone",
+                    style: TextStyle(
+                      fontFamily: "baloo",
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: " 250 wpm",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: CustomColors.brightyellow,
+                          ))
+                    ]),
+                // text : "Milestone 250 WPM",
+                // style: TextStyle(
+                //   fontFamily: "baloo",
+                //   fontWeight: FontWeight.bold,
+                //   color: CustomColors.brightyellow,
+                // ),
+              ),
+              CustomProgressBar(0.4)
+            ]),
           ),
           const SizedBox(
             height: 40,
@@ -125,7 +149,23 @@ class _GameCollectionsState extends State<GameCollections> {
                     ),
                   ),
                   const Text("Color Game")
-                ])
+                ]),
+              ]),
+              Column(children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 160, 225, 8),
+                    minRadius: 36,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, Peripheral_game.routeName);
+                        },
+                        icon: const Icon(Icons.color_lens)),
+                  ),
+                ),
+                const Text("Peripherial")
               ]),
             ]),
           ),
