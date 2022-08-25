@@ -20,11 +20,13 @@ class _Discover_MainState extends State<Discover_Main> {
   late Future<List> response;
   late Future<List> articles;
   late Future<List> summary;
+  late Future<List> testing;
   bool isSwitched = false;
 
   @override
   void initState() {
     response = fetchnews();
+    testing = fetcharticle();
     articles = fetch_artice();
     summary = fetch_summary();
     super.initState();
