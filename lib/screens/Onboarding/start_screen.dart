@@ -1,5 +1,6 @@
-import 'package:bolt/file_exported.dart';
+import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
+import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class Start_Screen extends StatefulWidget {
@@ -17,19 +18,18 @@ class _Start_ScreenState extends State<Start_Screen> {
       'image': 'assets/images/drdo_blaze.png',
       'title': 'What this collaboration brings?',
       'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+          'Hey Im bolt I will help you with creating a superpower in You!!!',
     },
     {
       'image': 'assets/images/ironman.gif',
       'title': 'How the Course was designed',
       'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
+          'This course was designed in the sense to create a drastic change in the user'
     },
     {
       'image': 'assets/images/toggle.gif',
       'title': 'Switch Things!',
-      'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
+      'desc': 'We have two features in our app\nThe one is the '
     }
   ];
 
@@ -44,8 +44,6 @@ class _Start_ScreenState extends State<Start_Screen> {
           ),
         ),
         body: Container(
-          height: MediaQuery.of(context).size.height,
-          margin: const EdgeInsets.symmetric(horizontal: 17),
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 160, 0, 30),
@@ -59,40 +57,38 @@ class _Start_ScreenState extends State<Start_Screen> {
                 ),
               ),
             ),
-            const Spacer(
-              flex: 1,
-            ),
             Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.only(bottom: 10),
-              child: Text(
-                start_content[onboard_index]['title'].toString(),
-                style: const TextStyle(
-                    color: CustomColors.brightyellow,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19),
-              ),
-            ),
+                margin: const EdgeInsets.all(20),
+                alignment: Alignment.centerLeft,
+                height: 40,
+                child: RichText(
+                  text: TextSpan(
+                    text: start_content[onboard_index]['title'].toString(),
+                    style: const TextStyle(
+                        color: Colors.yellow,
+                        fontFamily: 'Montserrat',
+                        fontSize: 20),
+                  ),
+                )),
             Container(
+                margin: const EdgeInsets.all(20),
                 alignment: Alignment.topLeft,
-                margin: const EdgeInsets.only(bottom: 30),
+                height: 100,
                 child: RichText(
                   text: TextSpan(
                     text: start_content[onboard_index]['desc'].toString(),
                     style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.yellow,
                         fontFamily: 'Montserrat',
-                        fontSize: 15),
+                        fontSize: 16),
                   ),
                 )),
             Container(
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.only(bottom: 20),
-              child: FlatButton(
-                  height: 50,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40)),
+              margin: const EdgeInsets.all(10),
+              child: TextButton(
+                  style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xffE7C1EA),
+                      textStyle: TextStyle(fontSize: 20)),
                   onPressed: () {
                     setState(() {
                       if (onboard_index < start_content.length - 1) {
@@ -105,11 +101,7 @@ class _Start_ScreenState extends State<Start_Screen> {
                       }
                     });
                   },
-                  color: const Color(0xffE7C1EA),
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(fontSize: 18),
-                  )),
+                  child: const Text("Continue")),
             ),
           ]),
         ));

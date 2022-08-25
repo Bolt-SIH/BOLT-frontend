@@ -13,6 +13,7 @@ import 'package:bolt/screens/games/schulte_table/shulte_level_one.dart';
 import 'package:bolt/screens/games/schulte_table/schulte_levelup.dart';
 
 import 'package:bolt/screens/Onboarding/start_screen.dart';
+import 'package:bolt/screens/Onboarding/userage.dart';
 
 
 import 'package:bolt/services/google_authentication.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+
             appBarTheme: const AppBarTheme(color: Colors.black),
             scaffoldBackgroundColor: CustomColors.backgroundColor,
             bottomSheetTheme: const BottomSheetThemeData(
@@ -59,6 +61,7 @@ class MyApp extends StatelessWidget {
           SchulteLevelOne.routeName: (ctx) => const SchulteLevelOne(),
           SchulteLevelUp.routeName: (ctx) => const SchulteLevelUp(),
         },
+
       ),
     );
   }
