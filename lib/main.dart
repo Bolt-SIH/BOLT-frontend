@@ -1,9 +1,12 @@
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
+// import 'package:bolt/screens/SpeedReading%20Games/colorLevel1.dart';
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:bolt/screens/SpeedReading Games/colorGameLevel1.dart';
+// import 'package:bolt/screens/SpeedReading Games/colorLevel1.dart';
 
 import 'file_exported.dart';
 
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: CustomColors.backgroundColor,
         ),
-        home: const Authentication(),
+        home: colorConfusionLevel1(),
       ),
     );
   }
