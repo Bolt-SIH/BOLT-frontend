@@ -29,8 +29,9 @@ class _UserAgeState extends State<UserAge> {
               children: [
                 RichText(
                     text: const TextSpan(
-                        children: [TextSpan(text: "What's your")]
-                        text: "age",style: TextStyle(color: Colors)))
+                        text: "age",
+                        style: TextStyle(color: CustomColors.brightyellow),
+                        children: [TextSpan(text: "What's your")]))
               ],
             ),
             Row(),
