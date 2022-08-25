@@ -1,11 +1,19 @@
+// ignore_for_file: unused_import, depend_on_referenced_packages
+
+import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
+
 import 'package:bolt/screens/games/game_collection.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/first_screen.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/second_screen.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/third_screen.dart';
 import 'package:bolt/screens/games/schulte_table/shulte_level_one.dart';
 import 'package:bolt/screens/games/schulte_table/schulte_levelup.dart';
+
+import 'package:bolt/screens/Onboarding/start_screen.dart';
+
+
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
