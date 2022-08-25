@@ -13,7 +13,7 @@ Future<List<dynamic>> fetcharticle() async {
   http.Response response =
       await _apiRequest.getResponse("/content/fetch-articles", ApiType.get);
 
-  log(json.decode(response.body).toString());
+  // log(json.decode(response.body).toString());
   return [];
 }
 

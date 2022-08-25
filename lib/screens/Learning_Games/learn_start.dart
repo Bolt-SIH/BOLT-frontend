@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +34,7 @@ class _Landing_PageState extends State<Landing_Page> {
                 });
               },
               value: isSwitched,
-              activeColor: Colors.blue,
+              activeColor: Colors.grey,
               activeTrackColor: Colors.white,
               inactiveThumbColor: Colors.grey,
               inactiveTrackColor: Colors.white),
@@ -48,15 +50,35 @@ class Learn_start extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Container(
-          margin: EdgeInsets.all(20),
-          color: Colors.grey,
-          height: 100,
-          width: MediaQuery.of(context).size.width * 0.9,
-        )
-      ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 17),
+      child: ListView(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 200,
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ClipRRect(
+              child: Image.asset("assets/images/feature_image.png"),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              log("Pressed");
+            },
+            child: Container(
+              height: 100,
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: ClipRRect(
+                child: Image.asset("assets/images/speedread.png"),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
