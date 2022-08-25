@@ -113,7 +113,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       // progressValue = progressValue! + 1 / 3;
                       if (progressValue! >= 1) {
                         Navigator.of(context)
-                            .pushNamed(SchulteLevelOne.routeName);
+                            .pushReplacementNamed(SchulteLevelOne.routeName);
                       }
                     });
                   },
