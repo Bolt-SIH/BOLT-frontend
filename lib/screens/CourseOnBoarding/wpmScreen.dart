@@ -50,7 +50,8 @@ class _WPMScreenState extends State<WPMScreen> {
                   child: Column(
                     children: [
                       Text(
-                        "${widget.second}",
+                        "${(268 / (widget.second / 60)).round()}",
+                        // Number of words count = 268
                         style: const TextStyle(
                             fontSize: 100,
                             color: CustomColors.brightyellow,
