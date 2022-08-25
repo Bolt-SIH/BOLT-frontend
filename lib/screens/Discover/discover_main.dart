@@ -188,7 +188,7 @@ class _Discover_MainState extends State<Discover_Main> {
           ),
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              height: 120,
+              height: 150,
               width: double.infinity,
               child: FutureBuilder<List>(
                   future: summary,
@@ -247,6 +247,12 @@ class _Discover_MainState extends State<Discover_Main> {
                               );
                             })));
                   }))),
+          Container(
+              margin: EdgeInsets.symmetric(vertical: 20),
+              child: Text(
+                "Made with ❤ in India",
+                textAlign: TextAlign.center,
+              )),
         ],
       ),
     );
