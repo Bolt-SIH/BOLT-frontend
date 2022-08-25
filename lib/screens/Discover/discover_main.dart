@@ -26,9 +26,8 @@ class _Discover_MainState extends State<Discover_Main> {
   @override
   void initState() {
     response = fetchnews();
-    testing = fetcharticle();
-    articles = fetch_artice();
-    summary = fetch_summary();
+    articles = fetcharticle();
+    summary = fetchsummary();
     super.initState();
   }
 
@@ -94,7 +93,7 @@ class _Discover_MainState extends State<Discover_Main> {
                     }
                     return Shimmer.fromColors(
                         baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -163,7 +162,7 @@ class _Discover_MainState extends State<Discover_Main> {
                     }
                     return Shimmer.fromColors(
                         baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -233,7 +232,7 @@ class _Discover_MainState extends State<Discover_Main> {
                     }
                     return Shimmer.fromColors(
                         baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -287,24 +286,24 @@ class Streakdash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10),
-      height: 100,
+      height: 80,
       width: double.infinity,
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 30, 29, 29),
           borderRadius: BorderRadius.circular(20)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            height: 25,
+            height: 20,
             margin: const EdgeInsets.symmetric(horizontal: 12),
-            width: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.6,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 7,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 25,
+                    width: 20,
                     margin: const EdgeInsets.only(right: 9),
                     decoration: BoxDecoration(
                       color: get_color(index),
@@ -313,9 +312,9 @@ class Streakdash extends StatelessWidget {
                   );
                 }),
           ),
-          const SizedBox(
+          SizedBox(
             // margin: const EdgeInsets.all(10),
-            width: 60,
+            width: MediaQuery.of(context).size.width * 0.2,
             child: Center(
               child: Text("Streaks 🔥 10 days",
                   style: TextStyle(
@@ -343,7 +342,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
 
   @override
   void initState() {
-    avengers = fetchavenger();
+    avengers = fetchcarousel();
     super.initState();
   }
   // ignore: non_constant_identifier_names
@@ -392,7 +391,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
               }
               return Shimmer.fromColors(
                   baseColor: Colors.grey,
-                  highlightColor: Colors.white10,
+                  highlightColor: Colors.white,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data?.length,

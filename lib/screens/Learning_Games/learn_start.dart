@@ -46,6 +46,7 @@ class _Landing_PageState extends State<Landing_Page> {
   }
 }
 
+// ignore: camel_case_types
 class Learn_start extends StatelessWidget {
   const Learn_start({Key? key}) : super(key: key);
 

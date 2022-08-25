@@ -2,6 +2,9 @@
 
 import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
+import 'package:bolt/screens/Learning_Games/learn_start.dart';
+
+import 'package:bolt/screens/Learning_Games/peripheral_game.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
@@ -41,6 +44,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+
             appBarTheme: const AppBarTheme(color: Colors.black),
             scaffoldBackgroundColor: CustomColors.backgroundColor,
             bottomSheetTheme: const BottomSheetThemeData(
