@@ -41,6 +41,10 @@ dependencies:
   http: ^0.13.5
 
   get_storage: ^2.0.3
+  
+  # For animation
+  rive: ^0.9.1
+  animated_text_kit: ^4.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -76,6 +80,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/animation/
         
 
   fonts:

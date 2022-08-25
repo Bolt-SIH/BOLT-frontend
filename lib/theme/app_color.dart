@@ -9,4 +9,6 @@ class CustomColors {
   static const successgreen = Color(0xff0AC25F);
 
   static const brightyellow = Color(0xffFFA032);
+
+  static const progressBarBackground = Color(0xff073846);
 }
