@@ -17,19 +17,19 @@ class _Start_ScreenState extends State<Start_Screen> {
       'image': 'assets/images/drdo_blaze.png',
       'title': 'What this collaboration brings?',
       'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+          'The Collaboration between DRDO and BOLT brings in the opportunity for the user to inculcate a great Skill ! ',
     },
     {
       'image': 'assets/images/ironman.gif',
       'title': 'How the Course was designed',
       'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
+          'The course was designed for user to test his skills and practice the part they lag on to percieve the great out of it! '
     },
     {
       'image': 'assets/images/toggle.gif',
       'title': 'Switch Things!',
       'desc':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
+          'Here`s what the best part of the app to switch between the learning part and the Discover feature to receive a great stream of knowledge and even apply the techniques'
     }
   ];
 

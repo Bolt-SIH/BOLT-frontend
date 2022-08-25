@@ -91,8 +91,8 @@ class _Discover_MainState extends State<Discover_Main> {
                           }));
                     }
                     return Shimmer.fromColors(
-                        baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        baseColor: Colors.white70,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -160,8 +160,8 @@ class _Discover_MainState extends State<Discover_Main> {
                           }));
                     }
                     return Shimmer.fromColors(
-                        baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        baseColor: Colors.white70,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -230,8 +230,8 @@ class _Discover_MainState extends State<Discover_Main> {
                           }));
                     }
                     return Shimmer.fromColors(
-                        baseColor: Colors.grey,
-                        highlightColor: Colors.white10,
+                        baseColor: Colors.white70,
+                        highlightColor: Colors.white,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: snapshot.data?.length,
@@ -284,9 +284,9 @@ class Streakdash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10),
-      height: 100,
-      width: double.infinity,
+      margin: EdgeInsets.all(10),
+      height: 80,
+      width: MediaQuery.of(context).size.width * 1,
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 30, 29, 29),
           borderRadius: BorderRadius.circular(20)),
@@ -294,16 +294,16 @@ class Streakdash extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 25,
-            margin: const EdgeInsets.symmetric(horizontal: 12),
-            width: MediaQuery.of(context).size.width * 0.7,
+            height: 20,
+            margin: const EdgeInsets.symmetric(horizontal: 7),
+            width: MediaQuery.of(context).size.width * 0.6,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 7,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 25,
-                    margin: const EdgeInsets.only(right: 9),
+                    width: 20,
+                    margin: const EdgeInsets.only(right: 7),
                     decoration: BoxDecoration(
                       color: get_color(index),
                       borderRadius: BorderRadius.circular(100),
@@ -311,9 +311,9 @@ class Streakdash extends StatelessWidget {
                   );
                 }),
           ),
-          const SizedBox(
+          SizedBox(
             // margin: const EdgeInsets.all(10),
-            width: 60,
+            width: MediaQuery.of(context).size.width * 0.3,
             child: Center(
               child: Text("Streaks 🔥 10 days",
                   style: TextStyle(
@@ -337,11 +337,11 @@ class Carouselwidget extends StatefulWidget {
 }
 
 class _CrouselwidgetState extends State<Carouselwidget> {
-  late Future<List> avengers;
+  late Future<List> carousel;
 
   @override
   void initState() {
-    avengers = fetchavenger();
+    carousel = fetchcarousel();
     super.initState();
   }
   // ignore: non_constant_identifier_names
@@ -352,7 +352,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
         margin: const EdgeInsets.symmetric(horizontal: 12),
         height: 200,
         child: FutureBuilder<List>(
-            future: avengers,
+            future: carousel,
             builder: ((context, snapshot) {
               if (snapshot.hasData) {
                 return CarouselSlider.builder(
@@ -380,7 +380,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
                       enableInfiniteScroll: true,
                       reverse: false,
                       autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 2),
+                      autoPlayInterval: const Duration(seconds: 3),
                       autoPlayAnimationDuration:
                           const Duration(milliseconds: 800),
                       autoPlayCurve: Curves.fastOutSlowIn,
@@ -389,8 +389,8 @@ class _CrouselwidgetState extends State<Carouselwidget> {
                     ));
               }
               return Shimmer.fromColors(
-                  baseColor: Colors.grey,
-                  highlightColor: Colors.white10,
+                  baseColor: Colors.white70,
+                  highlightColor: Colors.white,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data?.length,

@@ -4,10 +4,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<List<dynamic>> fetchavenger() async {
-  final aveng =
-      await http.get(Uri.parse("https://avengers.free.beeceptor.com"));
-  return jsonDecode(aveng.body);
+Future<List<dynamic>> fetchcarousel() async {
+  final carousel =
+      await http.get(Uri.parse("https://carousel.free.beeceptor.com"));
+  return jsonDecode(carousel.body);
 }
 
 Future<List<dynamic>> fetchnews() async {

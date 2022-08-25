@@ -32,15 +32,16 @@ class _Detail_screenState extends State<Detail_screen> {
           title: const Text("Detail Screen"),
           actions: [
             GestureDetector(
-              onTap: (() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) =>
-                            Words_read(response: response, index: index))));
-              }),
-              child: const Icon(Icons.navigate_next_sharp),
-            )
+                onTap: (() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) =>
+                              Words_read(response: response, index: index))));
+                }),
+                child: const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Icon(Icons.watch_later)))
           ],
           backgroundColor: Colors.black,
         ),
@@ -86,7 +87,7 @@ class _Detail_screenState extends State<Detail_screen> {
             child: Center(
               child: Text(
                 "\n"
-                "${response[index]['description']}\n\n Our personal finances play a huge role in our lives. And yet people rarely discuss them and educate themselves on this topic. For this reason, many presumptions and false ideas about money have emerged over the years.\n\nThey think having money is a result of luck or that rich people are all inheritors. Or perhaps wealth belongs only to those who disrupt the world and benefit from their discoveries.\n\n Wrong! Money is a universal, circular asset in the world. And you too can become financially independent, if you choose to adopt a few wealth-growing practices and change your current mindset. At first, you’ll have to acknowledge your financial situation. Biased financial decisions are what stand in the way between your current life and the life you desire.Then, it’ll be easier to spot and get rid of them. Your ways of seeking status, your envy, and other emotions that have control over you all play a significant role when it comes to your financial decisions. Of course, there are other things to explore when it comes to making better choices with your money. The Psychology of Money outlines what it is that you can do starting today to improve your financial status. Here are my three favorite lessons from the book:Being greedy can turn out to be the biggest financial mistake you’ll ever make. Envy has no place in the money market, as it can blur your thinking. Our early experiences with money determine our financial decisions later on. Now, let’s discuss these lessons in detail, and see how we can benefit from them!",
+                "${response[index]['description']}",
                 style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -185,7 +186,7 @@ class _Book_summary_detailState extends State<Book_summary_detail> {
             padding: const EdgeInsets.all(13.0),
             child: Text(
               "\n"
-              "${response[index]['description']}\n\n Our personal finances play a huge role in our lives. And yet people rarely discuss them and educate themselves on this topic. For this reason, many presumptions and false ideas about money have emerged over the years. They think having money is a result of luck or that rich people are all inheritors. Or perhaps wealth belongs only to those who disrupt the world and benefit from their discoveries.        Wrong! Money is a universal, circular asset in the world. And you too can become financially independent, if you choose to adopt a few wealth-growing practices and change your current mindset. At first, you’ll have to acknowledge your financial situation. Biased financial decisions are what stand in the way between your current life and the life you desire.Then, it’ll be easier to spot and get rid of them. Your ways of seeking status, your envy, and other emotions that have control over you all play a significant role when it comes to your financial decisions. Of course, there are other things to explore when it comes to making better choices with your money. The Psychology of Money outlines what it is that you can do starting today to improve your financial status. Here are my three favorite lessons from the book:Being greedy can turn out to be the biggest financial mistake you’ll ever make. Envy has no place in the money market, as it can blur your thinking. Our early experiences with money determine our financial decisions later on. Now, let’s discuss these lessons in detail, and see how we can benefit from them!",
+              "${response[index]['description']}",
               style: const TextStyle(
                 color: Colors.white,
                 fontFamily: 'Montserrat',
