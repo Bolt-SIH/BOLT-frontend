@@ -4,6 +4,7 @@ import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:bolt/screens/Onboarding/start_screen.dart';
+import 'package:bolt/screens/games/Focus/Intro.dart';
 
 import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
           Peripheral_game.routeName: (ctx) => const Peripheral_game(),
           Subvocalisation1.routeName: (ctx) => const Subvocalisation1(),
           fillerMain1.routeName: (ctx) => const fillerMain1(),
+          FocusMain.routeName: (ctx) => const FocusMain(),
         },
       ),
     );

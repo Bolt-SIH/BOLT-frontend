@@ -2,6 +2,7 @@ import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/Games/schulte_table/game_intro_screens/first_screen.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:bolt/screens/games/ColorGame/colorGameLevel1.dart';
+import 'package:bolt/screens/games/Focus/Intro.dart';
 import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
@@ -218,6 +219,19 @@ class _GameCollectionsState extends State<GameCollections> {
                         ]),
                       ]),
                 ]),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 160, 225, 8),
+                    minRadius: 36,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, FocusMain.routeName);
+                        },
+                        icon: const Icon(Icons.color_lens)),
+                  ),
+                ),
+                const Text("Focus"),
               ]),
             ),
           ],
