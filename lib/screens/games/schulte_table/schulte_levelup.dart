@@ -409,19 +409,19 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                           ),
                           // textAlign: TextAlign.left,
                         ),
-                        IconButton(
-                          onPressed: () {
-                            setState(() {
-                              myNum.shuffle();
-                              newUserInput.clear();
-                              myIndex = 0;
-                            });
-                          },
-                          icon: const Icon(
-                            Icons.refresh,
-                            color: Colors.white,
-                          ),
-                        ),
+                        // IconButton(
+                        //   onPressed: () {
+                        //     setState(() {
+                        //       myNum.shuffle();
+                        //       newUserInput.clear();
+                        //       myIndex = 0;
+                        //     });
+                        //   },
+                        //   icon: const Icon(
+                        //     Icons.refresh,
+                        //     color: Colors.white,
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -451,6 +451,9 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                     setState(() {
                       // progressValue = progressValue! + 1 / 3;
                       // print(newUserInput);
+                       myNum.shuffle();
+                              newUserInput.clear();
+                              myIndex = 0;
                     });
                   },
                   child: const SizedBox(
@@ -458,7 +461,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                     height: 60,
                     child: Center(
                       child: Text(
-                        "Check",
+                        "Refresh",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 30,
