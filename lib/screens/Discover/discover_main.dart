@@ -344,11 +344,11 @@ class Carouselwidget extends StatefulWidget {
 }
 
 class _CrouselwidgetState extends State<Carouselwidget> {
-  late Future<List> avengers;
+  late Future<List> carousel;
 
   @override
   void initState() {
-    avengers = fetchcarousel();
+    carousel = fetchcarousel();
     super.initState();
   }
   // ignore: non_constant_identifier_names
@@ -359,7 +359,7 @@ class _CrouselwidgetState extends State<Carouselwidget> {
         margin: const EdgeInsets.symmetric(horizontal: 12),
         height: 200,
         child: FutureBuilder<List>(
-            future: avengers,
+            future: carousel,
             builder: ((context, snapshot) {
               if (snapshot.hasData) {
                 return CarouselSlider.builder(

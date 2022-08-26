@@ -3,6 +3,7 @@
 import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
+import 'package:bolt/screens/Onboarding/start_screen.dart';
 
 import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';

@@ -34,7 +34,9 @@ Future<List<dynamic>> fetchsummary() async {
 }
 
 Future<List<dynamic>> fetchcarousel() async {
-  final carousel =
-      await http.get(Uri.parse("https://carousel.free.beeceptor.com"));
+  http.Response carousel =
+      await _apiRequest.getResponse("/content/Crousal", ApiType.get);
+
+  // log(json.decode(response.body).toString());
   return jsonDecode(carousel.body);
 }
