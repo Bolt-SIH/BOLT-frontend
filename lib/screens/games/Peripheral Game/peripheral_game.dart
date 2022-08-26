@@ -94,6 +94,14 @@ class _Peripheral_gameState extends State<Peripheral_game> {
     });
   }
 
+@override
+  void dispose() {
+    _timer.cancel();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
