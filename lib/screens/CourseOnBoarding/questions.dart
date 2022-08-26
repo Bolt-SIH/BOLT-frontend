@@ -5,7 +5,7 @@ import 'package:bolt/screens/Onboarding/userintrests.dart';
 import 'package:flutter/material.dart';
 
 class Questions extends StatefulWidget {
-  Questions({Key? key}) : super(key: key);
+  const Questions({Key? key}) : super(key: key);
 
   @override
   State<Questions> createState() => _QuestionsState();

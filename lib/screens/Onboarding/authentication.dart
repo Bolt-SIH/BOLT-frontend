@@ -72,7 +72,7 @@ class Authentication extends StatelessWidget {
               akash();
               // Return to the Course Onboarding screen or Course screen.
               if (box.read("onBoarded") == true) {
-                return const Learn_start();
+                return Learn_start();
               } else {
                 return const Start_Screen();
               }
@@ -82,8 +82,7 @@ class Authentication extends StatelessWidget {
               log(e.toString());
             }
           } else if (snapshot.hasData && box.read("token") != null) {
-            // return const Landing_Page();
-            return const Start_Screen();
+            return const Landing_Page();
           } else if (snapshot.hasError) {
             const SnackBar(
               content: Center(
