@@ -57,6 +57,8 @@ dependencies:
   url_launcher: ^6.1.5
   shimmer: ^2.0.0
 
+  audioplayers: ^1.0.1
+
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +87,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/animation/
+    - assets/audio/lalala.aac
         
 
   fonts:
