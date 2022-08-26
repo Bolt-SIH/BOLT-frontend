@@ -58,126 +58,150 @@ class _GameCollectionsState extends State<GameCollections> {
           )
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 70,
-            width: double.infinity,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            decoration: BoxDecoration(
-              border: Border.all(color: CustomColors.successbuttonbackground),
-              borderRadius: BorderRadius.circular(
-                10,
-              ),
-            ),
-            child: Column(children: [
-              Image.asset("assets/images/castle.png"),
-              RichText(
-                text: const TextSpan(
-                    text: "Next Milestone",
-                    style: TextStyle(
-                      fontFamily: "baloo",
-                      // fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                    children: [
-                      TextSpan(
-                          text: " 250 wpm",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: CustomColors.brightyellow,
-                          ))
-                    ]),
-                // text : "Milestone 250 WPM",
-                // style: TextStyle(
-                //   fontFamily: "baloo",
-                //   fontWeight: FontWeight.bold,
-                //   color: CustomColors.brightyellow,
-                // ),
-              ),
-              CustomProgressBar(0.4)
-            ]),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: CircleAvatar(
-                  backgroundColor: const Color.fromARGB(255, 255, 184, 208),
-                  minRadius: 36,
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, FirstScreen.routeName);
-                      },
-                      icon: const Icon(Icons.games)),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: ListView(
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.8,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              decoration: BoxDecoration(
+                border: Border.all(color: CustomColors.successbuttonbackground),
+                borderRadius: BorderRadius.circular(
+                  10,
                 ),
               ),
-              const Text("Schulte Table"),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: CircleAvatar(
-                      backgroundColor: const Color.fromARGB(255, 8, 135, 225),
-                      minRadius: 36,
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                                context, PointAndReadIntro.routeName);
-                          },
-                          icon: const Icon(Icons.read_more)),
-                    ),
+              child: Column(children: [
+                Image.asset("assets/images/castle.png"),
+                RichText(
+                  text: const TextSpan(
+                      text: "Next Milestone",
+                      style: TextStyle(
+                        fontFamily: "baloo",
+                        // fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                      children: [
+                        TextSpan(
+                            text: " 250 wpm",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: CustomColors.brightyellow,
+                            ))
+                      ]),
+                  // text : "Milestone 250 WPM",
+                  // style: TextStyle(
+                  //   fontFamily: "baloo",
+                  //   fontWeight: FontWeight.bold,
+                  //   color: CustomColors.brightyellow,
+                  // ),
+                ),
+                CustomProgressBar(0.4)
+              ]),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              // margin: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 255, 184, 208),
+                    minRadius: 36,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, FirstScreen.routeName);
+                        },
+                        icon: const Icon(Icons.games)),
                   ),
-                  const Text("Point & Read")
-                ]),
+                ),
+                const Text("Schulte Table"),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: CircleAvatar(
+                            backgroundColor:
+                                const Color.fromARGB(255, 8, 135, 225),
+                            minRadius: 36,
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, PointAndReadIntro.routeName);
+                                },
+                                icon: const Icon(Icons.read_more)),
+                          ),
+                        ),
+                        const Text("Point & Read")
+                      ]),
+                      Column(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: CircleAvatar(
+                            backgroundColor:
+                                const Color.fromARGB(255, 8, 225, 41),
+                            minRadius: 36,
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, colorConfusionLevel1.routeName);
+                                },
+                                icon: const Icon(Icons.color_lens)),
+                          ),
+                        ),
+                        const Text("Color Game")
+                      ]),
+                    ]),
                 Column(children: [
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: CircleAvatar(
-                      backgroundColor: const Color.fromARGB(255, 8, 225, 41),
+                      backgroundColor: const Color.fromARGB(255, 160, 225, 8),
                       minRadius: 36,
                       child: IconButton(
                           onPressed: () {
                             Navigator.pushNamed(
-                                context, colorConfusionLevel1.routeName);
+                                context, Peripheral_game.routeName);
                           },
                           icon: const Icon(Icons.color_lens)),
                     ),
                   ),
-                  const Text("Color Game")
+                  const Text("Peripherial"),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 8, 135, 225),
+                              minRadius: 36,
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, PointAndReadIntro.routeName);
+                                  },
+                                  icon: const Icon(Icons.read_more)),
+                            ),
+                          ),
+                          const Text("Point & Read")
+                        ]),
+                      ]),
                 ]),
               ]),
-              Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: CircleAvatar(
-                    backgroundColor: const Color.fromARGB(255, 160, 225, 8),
-                    minRadius: 36,
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(
-                              context, Peripheral_game.routeName);
-                        },
-                        icon: const Icon(Icons.color_lens)),
-                  ),
-                ),
-                const Text("Peripherial")
-              ]),
-            ]),
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
