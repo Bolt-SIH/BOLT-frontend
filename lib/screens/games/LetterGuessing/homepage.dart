@@ -1,9 +1,8 @@
 import 'dart:async';
 
-import 'package:bolt/screens/LetterGuessing/trialpage.dart';
+import 'package:bolt/screens/games/LetterGuessing/trialpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
 
 class FindTheLetter extends StatefulWidget {
   const FindTheLetter({super.key});

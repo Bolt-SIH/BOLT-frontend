@@ -1,4 +1,4 @@
-import 'package:bolt/screens/LetterGuessing/newpage.dart';
+import 'package:bolt/screens/games/LetterGuessing/newpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 

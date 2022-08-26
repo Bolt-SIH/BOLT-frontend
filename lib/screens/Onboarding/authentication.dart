@@ -4,6 +4,8 @@ import 'package:bolt/enums/api_type.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
 import 'package:bolt/screens/Onboarding/start_screen.dart';
+import 'package:bolt/screens/games/Focus/FocusPocus.dart';
+import 'package:bolt/screens/games/LetterGuessing/homepage.dart';
 import 'package:bolt/screens/games/filler/FillerMain.dart';
 import 'package:bolt/screens/games/game_collection.dart';
 import 'package:bolt/screens/games/subvocalisation/Intro.dart';
