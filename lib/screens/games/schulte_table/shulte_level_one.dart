@@ -454,9 +454,11 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
                     setState(() {
                       // progressValue = progressValue! + 1 / 3;
                       // print(newUserInput);
-                      myNum.shuffle();
-                      newUserInput.clear();
-                      myIndex = 0;
+
+                              myNum.shuffle();
+                              newUserInput.clear();
+                              myIndex = 0;
+
                     });
                   },
                   child: const SizedBox(
