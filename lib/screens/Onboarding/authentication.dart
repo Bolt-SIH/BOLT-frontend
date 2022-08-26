@@ -1,8 +1,13 @@
 import 'dart:io';
 
 import 'package:bolt/enums/api_type.dart';
+import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:bolt/screens/Onboarding/gettingstarted.dart';
 import 'package:bolt/screens/Onboarding/start_screen.dart';
+import 'package:bolt/screens/games/filler/FillerMain.dart';
+import 'package:bolt/screens/games/game_collection.dart';
+import 'package:bolt/screens/games/subvocalisation/Intro.dart';
+import 'package:bolt/screens/games/subvocalisation/SubVocalisationMain.dart';
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
@@ -54,9 +59,11 @@ class Authentication extends StatelessWidget {
                 // Added git code
                 // Loging in as the user is already SignedUp
                 if (response.statusCode == 400) {
+                  box.write("onBoarded", true);
                   Map<String, String> query = {
                     "email": "${user.email}",
                   };
+
                   http.Response response = await _apiRequest.getResponse(
                       "/user/user-check", ApiType.post,
                       body: query);
@@ -68,15 +75,18 @@ class Authentication extends StatelessWidget {
 
               akash();
               // Return to the Course Onboarding screen or Course screen.
-              return const Start_Screen();
+              if (box.read("onBoarded") == true) {
+                return Learn_start();
+              } else {
+                return const Start_Screen();
+              }
 
               // Return the screen.
             } on SocketException catch (e) {
               log(e.toString());
             }
           } else if (snapshot.hasData && box.read("token") != null) {
-            // Transfer to the Course Screen.
-            return const Start_Screen();
+            return const Landing_Page();
           } else if (snapshot.hasError) {
             const SnackBar(
               content: Center(

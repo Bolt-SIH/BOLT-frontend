@@ -1,4 +1,5 @@
 import 'package:bolt/file_exported.dart';
+import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 
 class SchulteLevelUp extends StatefulWidget {
   static const routeName = '/schulteLevelUp';
@@ -33,7 +34,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
 
   @override
   void dispose() {
-    timer!.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
@@ -204,6 +205,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                                                                     progressValue =
                                                                         progressValue! +
                                                                             1 / 3;
+                                                                            Navigator.pushNamed(context, LessonCompleted.routeName);
                                                                   });
                                                                 },
                                                                 child:
@@ -212,7 +214,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                                                                   height: 60,
                                                                   child: Center(
                                                                     child: Text(
-                                                                      "Level Up",
+                                                                      "Next",
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,

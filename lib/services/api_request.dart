@@ -22,6 +22,7 @@ class ApiRequest {
       headers ??= {};
       headers["Authorization"] = "Token ${box.read("token")}";
     }
+    log(headers.toString());
     switch (type) {
       case ApiType.get:
         return await http.get(

@@ -31,7 +31,7 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
 
   @override
   void dispose() {
-    timer!.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
@@ -39,8 +39,8 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
   Widget build(BuildContext context) {
     if (kDebugMode) {
       print("myIndex == $myIndex");
-    print("myNum[myIndex] == ${myNum[_index]}");
-    print("myCHeck num ==${myCheckNum[myIndex]}");
+      print("myNum[myIndex] == ${myNum[_index]}");
+      print("myCHeck num ==${myCheckNum[myIndex]}");
     }
     return Scaffold(
       appBar: AppBar(
@@ -61,7 +61,7 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: LinearProgressIndicator(
-                  backgroundColor: Colors.blueGrey,
+                  backgroundColor: CustomColors.progressBarBackground,
                   minHeight: 14,
                   value: progressValue,
                   valueColor:
@@ -353,7 +353,7 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
                                         progressValue = progressValue! - 1 / 3;
                                       });
                                       // print("keep practise");
-                                     
+
                                     }
                                   }
                                   // print(myNum[index]);
@@ -454,9 +454,11 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
                     setState(() {
                       // progressValue = progressValue! + 1 / 3;
                       // print(newUserInput);
+
                               myNum.shuffle();
                               newUserInput.clear();
                               myIndex = 0;
+
                     });
                   },
                   child: const SizedBox(

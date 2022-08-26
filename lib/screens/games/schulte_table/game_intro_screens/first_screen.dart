@@ -46,7 +46,7 @@ class _FirstScreenState extends State<FirstScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: LinearProgressIndicator(
-                  backgroundColor: Colors.blueGrey,
+                  backgroundColor: CustomColors.progressBarBackground,
                   minHeight: 14,
                   value: progressValue,
                   valueColor:
