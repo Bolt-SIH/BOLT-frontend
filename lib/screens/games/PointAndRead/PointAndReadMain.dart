@@ -86,6 +86,14 @@ Any investment you add to your portfolio should be a good investment in its own 
     });
   }
 
+  @override
+  void dispose() {
+    _timer.cancel();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+
   bool isactive = true;
   @override
   Widget build(BuildContext context) {
