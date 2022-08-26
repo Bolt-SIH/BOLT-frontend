@@ -21,7 +21,7 @@ Future<List<dynamic>> fetchnews() async {
   http.Response news =
       await _apiRequest.getResponse("/content/fetch-news", ApiType.get);
 
-  // log(json.decode(response.body).toString());
+  // log(json.encode(json.decode(news.body)).toString());
   return jsonDecode(news.body)['articles'];
 }
 

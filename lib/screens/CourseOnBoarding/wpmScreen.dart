@@ -1,6 +1,7 @@
 import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/CourseOnBoarding/lesson.dart';
 import 'package:bolt/screens/CourseOnBoarding/questions.dart';
+import 'package:bolt/screens/CourseOnBoarding/quiz%20screen/starting.dart';
 import 'package:rive/rive.dart';
 
 // TODO: Work on WPM logic.
@@ -120,8 +121,10 @@ class _WPMScreenState extends State<WPMScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   // TODO: Should now navigate to question screen.
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => Questions()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StartingQuiz()));
                 },
                 style: ElevatedButton.styleFrom(
                     primary: const Color(0xff02C7FC),
