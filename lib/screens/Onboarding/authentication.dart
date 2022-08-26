@@ -6,6 +6,8 @@ import 'package:bolt/screens/Onboarding/gettingstarted.dart';
 import 'package:bolt/screens/Onboarding/start_screen.dart';
 import 'package:bolt/screens/games/filler/FillerMain.dart';
 import 'package:bolt/screens/games/game_collection.dart';
+import 'package:bolt/screens/games/subvocalisation/Intro.dart';
+import 'package:bolt/screens/games/subvocalisation/SubVocalisationMain.dart';
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
@@ -84,7 +86,7 @@ class Authentication extends StatelessWidget {
               log(e.toString());
             }
           } else if (snapshot.hasData && box.read("token") != null) {
-            return const Landing_Page();
+            return const Subvocalisation1();
           } else if (snapshot.hasError) {
             const SnackBar(
               content: Center(
