@@ -1,22 +1,27 @@
+import 'package:bolt/enums/api_type.dart';
 import 'package:bolt/file_exported.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:bolt/screens/Learning_Games/learn_start.dart';
+import 'package:bolt/theme/app_styles.dart';
+import 'package:http/http.dart' as http;
+
+import '../../services/api_request.dart';
 
 List UserIntrests = [];
 
 class userIntrests extends StatefulWidget {
-  userIntrests({Key? key}) : super(key: key);
-
+  final String age;
+  userIntrests({Key? key, required this.age}) : super(key: key);
   int index = 0;
   @override
   State<userIntrests> createState() => _userIntrestsState();
 }
 
 class _userIntrestsState extends State<userIntrests> {
+  final _apiRequest = ApiRequest(baseUrl: "3.110.119.227");
+
   @override
   Widget build(BuildContext context) {
-    bool value = false;
-
+    log(widget.age.toString());
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -30,206 +35,219 @@ class _userIntrestsState extends State<userIntrests> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(5, 30, 5, 15),
-            child: RichText(
-                text: const TextSpan(
-              children: [
-                TextSpan(
-                  text: "Topics that",
-                  style: TextStyle(fontSize: 35),
-                ),
-                TextSpan(
-                  text: " excite",
-                  style:
-                      TextStyle(fontSize: 35, color: CustomColors.brightyellow),
-                ),
-                TextSpan(
-                  text: " you",
-                  style: TextStyle(
-                    fontSize: 35,
-                  ),
-                )
-              ],
-            )),
-          ),
-          // Container
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Wrap(
-                      spacing: 5.0,
-                      runSpacing: 5.0,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: filterChipWidget(
-                            index: 0,
-                            chipName: 'Entrepreneurship',
-                            key: UniqueKey(),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 17),
+        child: ListView(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              child: RichText(
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    style: TextStyle(fontSize: 25),
+                    children: [
+                      TextSpan(
+                        text: "Topics that",
+                      ),
+                      TextSpan(
+                        text: " excites",
+                        style: TextStyle(color: CustomColors.brightyellow),
+                      ),
+                      TextSpan(
+                        text: " you",
+                      )
+                    ],
+                  )),
+            ),
+            // Container
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                // padding: const EdgeInsets.only(left: 8.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Wrap(
+                        spacing: 5.0,
+                        runSpacing: 5.0,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: filterChipWidget(
+                              index: 0,
+                              chipName: 'Entrepreneurship',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 2),
-                          child: filterChipWidget(
-                            index: 1,
-                            chipName: 'Sports',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 2),
+                            child: filterChipWidget(
+                              index: 1,
+                              chipName: 'Sports',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 2,
+                              chipName: 'Science & Technology',
+                              key: UniqueKey(),
+                            ),
                           ),
-                          child: filterChipWidget(
-                            index: 2,
-                            chipName: 'Science & Technology',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 8,
+                            ),
+                            child: filterChipWidget(
+                              index: 3,
+                              chipName: 'Art & Culture',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 8,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 4,
+                              chipName: 'Holidays & Travels',
+                              key: UniqueKey(),
+                            ),
                           ),
-                          child: filterChipWidget(
-                            index: 3,
-                            chipName: 'Art & Culture',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 5,
+                              chipName: 'Finance & Investment',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 6,
+                              chipName: 'Women Empowerment',
+                              key: UniqueKey(),
+                            ),
                           ),
-                          child: filterChipWidget(
-                            index: 4,
-                            chipName: 'Holidays & Travels',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 2),
+                            child: filterChipWidget(
+                              index: 7,
+                              chipName: 'Life learning',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 8,
+                              chipName: 'Environmental Conservation',
+                              key: UniqueKey(),
+                            ),
                           ),
-                          child: filterChipWidget(
-                            index: 5,
-                            chipName: 'Finance & Investment',
-                            key: UniqueKey(),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: 2, right: 10),
+                            child: filterChipWidget(
+                              index: 9,
+                              chipName: 'Psychology',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: 2, right: 10),
+                            child: filterChipWidget(
+                              index: 10,
+                              chipName: 'Wildlife conservation',
+                              key: UniqueKey(),
+                            ),
                           ),
-                          child: filterChipWidget(
-                            index: 6,
-                            chipName: 'Women Empowerment',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 11,
+                              chipName: 'Law & Order',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 2),
-                          child: filterChipWidget(
-                            index: 7,
-                            chipName: 'Life learning',
-                            key: UniqueKey(),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 2,
+                            ),
+                            child: filterChipWidget(
+                              index: 12,
+                              chipName: 'Spirituality',
+                              key: UniqueKey(),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
-                          ),
-                          child: filterChipWidget(
-                            index: 8,
-                            chipName: 'Environmental Conservation',
-                            key: UniqueKey(),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 2, right: 10),
-                          child: filterChipWidget(
-                            index: 9,
-                            chipName: 'Psychology',
-                            key: UniqueKey(),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 2, right: 10),
-                          child: filterChipWidget(
-                            index: 10,
-                            chipName: 'Wildlife conservation',
-                            key: UniqueKey(),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
-                          ),
-                          child: filterChipWidget(
-                            index: 11,
-                            chipName: 'Law & Order',
-                            key: UniqueKey(),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 2,
-                          ),
-                          child: filterChipWidget(
-                            index: 12,
-                            chipName: 'Spirituality',
-                            key: UniqueKey(),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.85,
-            height: MediaQuery.of(context).size.height * 0.08,
-            child: TextButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      CustomColors.successbuttonbackground),
-                ),
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+              child: ElevatedButton(
                 onPressed: () {
-                  print("hello world");
-                }),
-          ),
-        ],
+                  Future apicall() async {
+                    Map<String, String> query = {
+                      "age_bracket": "17-24",
+                      "prefs":
+                          "['Life learning' , 'Science & Technology' , 'Entrepreneurship']"
+                    };
+
+                    log(query.toString());
+
+                    http.Response response = await _apiRequest.getResponse(
+                      "/user/user-prefs",
+                      ApiType.post,
+                      body: query,
+                    );
+                    log(json.decode(json.encode(response.body)).toString());
+                  }
+
+                  apicall();
+
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Landing_Page()));
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: const Color(0xff02C7FC),
+                    onPrimary: const Color(0xff000000),
+                    minimumSize: const Size.fromHeight(50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    )),
+                child: const Text(
+                  'Continue',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
-}
-
-Widget _titleContainer(String myTitle) {
-  return Text(
-    myTitle,
-    style: TextStyle(
-        color: Colors.black, fontSize: 24.0, fontWeight: FontWeight.bold),
-  );
 }
 
 class filterChipWidget extends StatefulWidget {
@@ -254,7 +272,7 @@ class _filterChipWidgetState extends State<filterChipWidget> {
     return FilterChip(
       label: Text(
         widget.chipName,
-        style: TextStyle(fontSize: 25),
+        style: const TextStyle(fontSize: 25),
       ),
       labelStyle: TextStyle(
           color: _isselected ? interestText : Colors.grey,

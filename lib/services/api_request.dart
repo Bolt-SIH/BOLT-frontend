@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import '../enums/api_type.dart';
 
@@ -14,6 +17,12 @@ class ApiRequest {
       {Map<String, String>? queryParams,
       Map<String, String>? headers,
       Object? body}) async {
+    final box = GetStorage();
+    if (box.read("token") != null) {
+      headers ??= {};
+      headers["Authorization"] = "Token ${box.read("token")}";
+    }
+    log(headers.toString());
     switch (type) {
       case ApiType.get:
         return await http.get(

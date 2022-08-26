@@ -12,7 +12,7 @@ class userAge extends StatefulWidget {
 }
 
 class _userAgeState extends State<userAge> {
-  List enteryourage = ['12 - 16  yrs', '17 - 24  years', '24+  years'];
+  List enteryourage = ['12 - 16  years', '17 - 24  years', '24+  years'];
 
   List enteredageis = [];
 
@@ -72,11 +72,13 @@ class _userAgeState extends State<userAge> {
                   onPressed: () {
                     setState(() {
                       enteredageis.add(enteryourage[0]);
-                      print(enteryourage[0]);
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => userIntrests()));
+                              builder: (context) => userIntrests(
+                                    age: enteryourage[0],
+                                  )));
                     });
                   },
                 ),
@@ -100,11 +102,13 @@ class _userAgeState extends State<userAge> {
                   onPressed: () {
                     setState(() {
                       enteredageis.add(enteryourage[1]);
-                      print(enteryourage[1]);
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => userIntrests()));
+                              builder: (context) => userIntrests(
+                                    age: enteryourage[1],
+                                  )));
                     });
                   },
                 ),
@@ -128,11 +132,13 @@ class _userAgeState extends State<userAge> {
                 onPressed: () {
                   setState(() {
                     enteredageis.add(enteryourage[2]);
-                    print(enteryourage[2]);
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => userIntrests()));
+                            builder: (context) => userIntrests(
+                                  age: enteryourage[2],
+                                )));
                   });
                 },
               ),

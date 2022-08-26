@@ -2,28 +2,41 @@
 
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
+import 'package:bolt/enums/api_type.dart';
+import 'package:bolt/services/api_request.dart';
 import 'package:http/http.dart' as http;
 
-Future<List<dynamic>> fetchavenger() async {
-  final aveng =
-      await http.get(Uri.parse("https://avengers.free.beeceptor.com"));
-  return jsonDecode(aveng.body);
+final _apiRequest = ApiRequest(baseUrl: "3.110.119.227");
+
+Future<List<dynamic>> fetcharticle() async {
+  http.Response response =
+      await _apiRequest.getResponse("/content/fetch-articles", ApiType.get);
+
+  // log(json.decode(response.body).toString());
+  return jsonDecode(response.body)['articles'];
 }
 
 Future<List<dynamic>> fetchnews() async {
-  final news = await http.get(Uri.parse(
-      "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=f5e1a8d911554465bf7b929b132a94f2"));
+  http.Response news =
+      await _apiRequest.getResponse("/content/fetch-news", ApiType.get);
+
+  log(json.encode(json.decode(news.body)).toString());
   return jsonDecode(news.body)['articles'];
 }
 
-Future<List<dynamic>> fetch_artice() async {
-  final news = await http.get(Uri.parse(
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=f5e1a8d911554465bf7b929b132a94f2"));
-  return jsonDecode(news.body)['articles'];
+Future<List<dynamic>> fetchsummary() async {
+  http.Response news =
+      await _apiRequest.getResponse("/content/fetch-books", ApiType.get);
+
+  // log(json.decode(response.body).toString());
+  return jsonDecode(news.body);
 }
 
-Future<List<dynamic>> fetch_summary() async {
-  final summary =
-      await http.get(Uri.parse("https://summary.free.beeceptor.com/"));
-  return jsonDecode(summary.body);
+Future<List<dynamic>> fetchcarousel() async {
+  http.Response carousel =
+      await _apiRequest.getResponse("/content/Crousal", ApiType.get);
+
+  // log(json.decode(response.body).toString());
+  return jsonDecode(carousel.body);
 }

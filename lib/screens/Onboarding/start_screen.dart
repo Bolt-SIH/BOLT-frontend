@@ -1,5 +1,7 @@
+import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
+import 'package:bolt/screens/Onboarding/userage.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -22,7 +24,7 @@ class _Start_ScreenState extends State<Start_Screen> {
     },
     {
       'image': 'assets/images/ironman.gif',
-      'title': 'How the Course was designed',
+      'title': 'How the Course was designed?',
       'desc':
           'This course was designed in the sense to create a drastic change in the user'
     },
@@ -44,6 +46,8 @@ class _Start_ScreenState extends State<Start_Screen> {
           ),
         ),
         body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 17),
+          height: MediaQuery.of(context).size.height,
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 160, 0, 30),
@@ -57,51 +61,60 @@ class _Start_ScreenState extends State<Start_Screen> {
                 ),
               ),
             ),
+            const Spacer(
+              flex: 1,
+            ),
             Container(
-                margin: const EdgeInsets.all(20),
                 alignment: Alignment.centerLeft,
-                height: 40,
+                margin: const EdgeInsets.only(bottom: 15),
                 child: RichText(
                   text: TextSpan(
                     text: start_content[onboard_index]['title'].toString(),
                     style: const TextStyle(
-                        color: Colors.yellow,
+                        color: CustomColors.brightyellow,
                         fontFamily: 'Montserrat',
-                        fontSize: 20),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 21),
                   ),
                 )),
             Container(
-                margin: const EdgeInsets.all(20),
                 alignment: Alignment.topLeft,
-                height: 100,
+                margin: const EdgeInsets.only(bottom: 30),
                 child: RichText(
                   text: TextSpan(
                     text: start_content[onboard_index]['desc'].toString(),
                     style: const TextStyle(
-                        color: Colors.yellow,
+                        color: Colors.white,
                         fontFamily: 'Montserrat',
-                        fontSize: 16),
+                        fontWeight: FontWeight.w300,
+                        fontSize: 18),
                   ),
                 )),
             Container(
-              margin: const EdgeInsets.all(10),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: const Color(0xffE7C1EA),
-                      textStyle: TextStyle(fontSize: 20)),
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xff02C7FC),
+                      onPrimary: const Color(0xff000000),
+                      minimumSize: const Size.fromHeight(50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      )),
                   onPressed: () {
                     setState(() {
                       if (onboard_index < start_content.length - 1) {
                         onboard_index += 1;
                       } else if (onboard_index == start_content.length - 1) {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Landing_Page()));
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => userAge()));
                       }
                     });
                   },
-                  child: const Text("Continue")),
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  )),
             ),
           ]),
         ));
