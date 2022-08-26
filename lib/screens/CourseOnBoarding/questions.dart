@@ -4,16 +4,24 @@ import 'package:bolt/screens/Onboarding/userintrests.dart';
 
 import 'package:flutter/material.dart';
 
-class userAge extends StatefulWidget {
-  userAge({Key? key}) : super(key: key);
+class Questions extends StatefulWidget {
+  Questions({Key? key}) : super(key: key);
 
   @override
-  State<userAge> createState() => _userAgeState();
+  State<Questions> createState() => _QuestionsState();
 }
 
-class _userAgeState extends State<userAge> {
+class _QuestionsState extends State<Questions> {
   List enteryourage = ['12 - 16  years', '17 - 24  years', '24+  years'];
 
+  List<Map<String, dynamic>> question = [
+    {
+      "question": "Question number 1",
+      "optionA": "",
+      "optionB": "",
+      "optionC": "",
+    }
+  ];
   List enteredageis = [];
 
   @override

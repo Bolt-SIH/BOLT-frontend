@@ -1,5 +1,6 @@
 import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/Games/schulte_table/game_intro_screens/first_screen.dart';
+import 'package:bolt/screens/Learning_Games/learn_start.dart';
 import 'package:bolt/screens/games/ColorGame/colorGameLevel1.dart';
 import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
@@ -19,6 +20,13 @@ class _GameCollectionsState extends State<GameCollections> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const Landing_Page()));
+          },
+        ),
         title: const Text(
           "Speed Reading",
           style: TextStyle(

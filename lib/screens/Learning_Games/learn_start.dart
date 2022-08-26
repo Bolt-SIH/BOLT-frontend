@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bolt/screens/CourseOnBoarding/intro.dart';
 import 'package:bolt/screens/Discover/discover_main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Landing_Page extends StatefulWidget {
@@ -12,19 +13,21 @@ class Landing_Page extends StatefulWidget {
 }
 
 class _Landing_PageState extends State<Landing_Page> {
+  final user = FirebaseAuth.instance.currentUser!;
   bool isSwitched = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: isSwitched
             ? const Text(
                 "Lets Learn 👍",
                 style: TextStyle(fontFamily: 'baloo', fontSize: 25),
               )
-            : const Text(
-                "Hey, Sachin 👋",
+            : Text(
+                "Hey, ${user.displayName!.split(" ")[0]} 👋",
                 style: TextStyle(fontFamily: 'baloo', fontSize: 25),
               ),
         actions: [
