@@ -31,7 +31,7 @@ class _SchulteLevelOneState extends State<SchulteLevelOne> {
 
   @override
   void dispose() {
-    timer!.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
