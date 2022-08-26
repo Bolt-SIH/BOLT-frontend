@@ -34,7 +34,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
 
   @override
   void dispose() {
-    timer!.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
@@ -205,7 +205,7 @@ class _SchulteLevelUpState extends State<SchulteLevelUp> {
                                                                     progressValue =
                                                                         progressValue! +
                                                                             1 / 3;
-                                                                            Navigator.pushReplacementNamed(context, LessonCompleted.routeName);
+                                                                            Navigator.pushNamed(context, LessonCompleted.routeName);
                                                                   });
                                                                 },
                                                                 child:
