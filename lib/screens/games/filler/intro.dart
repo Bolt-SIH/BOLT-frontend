@@ -2,10 +2,12 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bolt/file_exported.dart';
 import 'package:bolt/screens/CourseOnBoarding/LetsStart.dart';
 import 'package:bolt/screens/Learning_Games/learn_start.dart';
+import 'package:bolt/screens/games/filler/FillerMain.dart';
 import 'package:bolt/theme/app_styles.dart';
 import 'package:rive/rive.dart';
 
 class fillerMain1 extends StatefulWidget {
+  static const routeName = "fillerMain1";
   const fillerMain1({Key? key}) : super(key: key);
 
   @override
@@ -217,7 +219,7 @@ class _FillerMain3State extends State<FillerMain3> {
           const Spacer(
             flex: 1,
           ),
-          button("Continue", const ReadingTest(), context)
+          button("Continue", const FillerMain(), context)
         ]),
       ),
     );

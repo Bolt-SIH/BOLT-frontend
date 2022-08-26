@@ -9,11 +9,13 @@ import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/Onboarding/authentication.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
+import 'package:bolt/screens/games/filler/intro.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/first_screen.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/second_screen.dart';
 import 'package:bolt/screens/games/schulte_table/game_intro_screens/third_screen.dart';
 import 'package:bolt/screens/games/schulte_table/schulte_levelup.dart';
 import 'package:bolt/screens/games/schulte_table/shulte_level_one.dart';
+import 'package:bolt/screens/games/subvocalisation/Intro.dart';
 
 import 'package:bolt/services/google_authentication.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -65,6 +67,8 @@ class MyApp extends StatelessWidget {
           colorConfusionLevel1.routeName: (ctx) => const colorConfusionLevel1(),
           // Peripheral vision
           Peripheral_game.routeName: (ctx) => const Peripheral_game(),
+          Subvocalisation1.routeName: (ctx) => const Subvocalisation1(),
+          fillerMain1.routeName: (ctx) => const fillerMain1(),
         },
       ),
     );

@@ -5,6 +5,8 @@ import 'package:bolt/screens/games/ColorGame/colorGameLevel1.dart';
 import 'package:bolt/screens/games/Peripheral%20Game/peripheral_game.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadIntro.dart';
 import 'package:bolt/screens/games/PointAndRead/PointAndReadMain.dart';
+import 'package:bolt/screens/games/filler/intro.dart';
+import 'package:bolt/screens/games/subvocalisation/Intro.dart';
 import 'package:bolt/theme/app_styles.dart';
 
 class GameCollections extends StatefulWidget {
@@ -15,6 +17,7 @@ class GameCollections extends StatefulWidget {
 }
 
 class _GameCollectionsState extends State<GameCollections> {
+  int score = 50;
   int myIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -189,12 +192,29 @@ class _GameCollectionsState extends State<GameCollections> {
                               child: IconButton(
                                   onPressed: () {
                                     Navigator.pushNamed(
-                                        context, PointAndReadIntro.routeName);
+                                        context, fillerMain1.routeName);
                                   },
                                   icon: const Icon(Icons.read_more)),
                             ),
                           ),
-                          const Text("Point & Read")
+                          const Text("Filler Word")
+                        ]),
+                        Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 225, 8, 120),
+                              minRadius: 36,
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, Subvocalisation1.routeName);
+                                  },
+                                  icon: const Icon(Icons.read_more)),
+                            ),
+                          ),
+                          const Text("SubVocalisation")
                         ]),
                       ]),
                 ]),

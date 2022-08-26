@@ -86,7 +86,7 @@ class Authentication extends StatelessWidget {
               log(e.toString());
             }
           } else if (snapshot.hasData && box.read("token") != null) {
-            return const Subvocalisation1();
+            return const Landing_Page();
           } else if (snapshot.hasError) {
             const SnackBar(
               content: Center(

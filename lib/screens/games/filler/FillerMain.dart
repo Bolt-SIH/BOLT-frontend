@@ -96,7 +96,7 @@ Any investment you add to your portfolio should be a good investment in its own 
             const SizedBox(
               height: 20,
             ),
-            button("LevelUp", const LessonCompleted(), context)
+            button("Complete", const LessonCompleted(), context)
           ]),
         ),
       ),

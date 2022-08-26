@@ -8,6 +8,7 @@ import 'package:bolt/theme/app_styles.dart';
 import 'package:rive/rive.dart';
 
 class Subvocalisation1 extends StatefulWidget {
+  static const routeName = "Subvocalisation1";
   const Subvocalisation1({Key? key}) : super(key: key);
 
   @override
